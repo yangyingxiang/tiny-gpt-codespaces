@@ -1,0 +1,28 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install CPU-only PyTorch
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu torch
+          python -m pip install numpy pytest
+      - name: Run tests
+        run: python -m pytest -q tests
+      - name: Smoke-test the training loop
+        run: |
+          python -m src.train --max_iters 20 --batch_size 4 --block_size 32 \
+            --n_layer 1 --n_head 1 --n_embd 32 --eval_interval 10 --eval_iters 2 --log_interval 5

@@ -1,0 +1,85 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Train: quick debug run (50 iters, tiny model)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "src.train",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "justMyCode": false,
+      "args": [
+        "--max_iters", "50",
+        "--batch_size", "8",
+        "--block_size", "64",
+        "--n_layer", "2",
+        "--n_head", "2",
+        "--n_embd", "64",
+        "--eval_interval", "25",
+        "--eval_iters", "5",
+        "--log_interval", "5"
+      ]
+    },
+    {
+      "name": "Train: full run (500 iters)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "src.train",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "justMyCode": false,
+      "args": ["--max_iters", "500"]
+    },
+    {
+      "name": "Train: stop on first exception",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "src.train",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "justMyCode": false,
+      "stopOnEntry": true,
+      "args": ["--max_iters", "20", "--log_interval", "1"]
+    },
+    {
+      "name": "Sample from checkpoint",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "src.sample",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "justMyCode": false,
+      "args": ["--prompt", "ROMEO:", "--max_new_tokens", "300"]
+    },
+    {
+      "name": "Pytest: all tests",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "justMyCode": false,
+      "args": ["-vv", "tests"]
+    },
+    {
+      "name": "Python: current file",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "justMyCode": false
+    },
+    {
+      "name": "Attach to running process (debugpy :5678)",
+      "type": "debugpy",
+      "request": "attach",
+      "connect": { "host": "localhost", "port": 5678 },
+      "justMyCode": false,
+      "pathMappings": [
+        { "localRoot": "${workspaceFolder}", "remoteRoot": "." }
+      ]
+    }
+  ]
+}

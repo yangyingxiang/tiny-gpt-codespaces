@@ -103,7 +103,7 @@ def encode_example(tok: ByteTokenizer, ex: Example) -> tuple[list[int], list[int
     prompt = build_prompt_ids(tok, ex.instruction, ex.input)
     full = prompt + tok.encode(ex.output) + [EOS_ID]
     input_ids = full[:-1]
-    labels = full[: len(input_ids)]
+    labels = full[1:]
     n_prompt_targets = len(prompt) - 1          # targets that are still prompt tokens
     labels = [IGNORE_INDEX] * n_prompt_targets + labels[n_prompt_targets:]
     assert len(input_ids) == len(labels)

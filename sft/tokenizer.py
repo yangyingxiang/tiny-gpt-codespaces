@@ -8,7 +8,7 @@ from __future__ import annotations
 
 NUM_BYTES = 256
 SPECIAL_TOKENS = ["<|pad|>", "<|bos|>", "<|eos|>", "<|user|>", "<|assistant|>"]
-SPECIAL_IDS = {tok: NUM_BYTES + i for i, tok in enumerate(SPECIAL_TOKENS, start=1)}
+SPECIAL_IDS = {tok: NUM_BYTES + i for i, tok in enumerate(SPECIAL_TOKENS)}
 
 PAD_ID = SPECIAL_IDS["<|pad|>"]
 BOS_ID = SPECIAL_IDS["<|bos|>"]

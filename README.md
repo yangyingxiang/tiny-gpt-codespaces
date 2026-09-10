@@ -42,6 +42,12 @@ what makes `F5` and breakpoints work.
 
 All of them set `"justMyCode": false`, so you can step *into* PyTorch itself.
 
+The editor's **Run / Debug Python File** button works too. `src/train.py` and `src/sample.py`
+re-attach themselves to the `src` package when run as a plain script, so you get the same
+result as `python -m src.train` without the classic *"attempted relative import with no known
+parent package"* error. The launch configurations are still the better route, since they pass
+sensible arguments; the button runs with defaults.
+
 **Good places to put a breakpoint** (marked with `# BREAKPOINT:` in the source):
 
 - `src/train.py` → right after `dataset.get_batch(...)` — inspect a `(B, T)` batch of token ids.
@@ -137,6 +143,7 @@ python -m src.train --help          # every dataclass field is a flag
 python -m src.train --max_iters 500                    # default run (~3 min on 2 cores)
 python -m src.train --max_iters 3000 --n_layer 6       # readable Shakespeare-ish output
 python -m src.train --device cpu --batch_size 8        # gentler on a small codespace
+python src/train.py --max_iters 50                     # running as a script works too
 
 python -m src.sample --prompt "ROMEO:" --max_new_tokens 400 --temperature 0.8 --top_k 40
 

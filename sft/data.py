@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import json
 import random
+import unicodedata
 from dataclasses import dataclass
 from functools import partial
 from pathlib import Path
@@ -60,9 +61,17 @@ def load_jsonl(path) -> list[Example]:
 
 # --------------------------------------------------------------------------- dedup + split
 
+def _norm(s: str) -> str:
+    return " ".join(unicodedata.normalize("NFC", s).split())
+
+
 def dedup_key(ex: Example) -> tuple[str, str, str]:
-    """Two examples with the same key are the same training example."""
-    return (ex.instruction, ex.input, ex.output)
+    """Two examples with the same key are the same training example.
+
+    Case and whitespace in the instruction, whitespace anywhere, and Unicode
+    normal form are formatting, not content.
+    """
+    return (_norm(ex.instruction).casefold(), _norm(ex.input), _norm(ex.output))
 
 
 def dedup(examples: list[Example]) -> list[Example]:

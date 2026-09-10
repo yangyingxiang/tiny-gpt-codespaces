@@ -127,9 +127,10 @@ def collate(batch, block_size: int):
     max_len = min(max(len(x) for x, _ in batch), block_size)
     inputs, labels = [], []
     for x, y in batch:
-        x = x[:max_len]
-        inputs.append(x + [PAD_ID] * (max_len - len(x)))
-        labels.append(y + [IGNORE_INDEX] * (max_len - len(y)))
+        x, y = x[:max_len], y[:max_len]
+        pad = max_len - len(x)
+        inputs.append(x + [PAD_ID] * pad)
+        labels.append(y + [IGNORE_INDEX] * pad)
     return torch.tensor(inputs, dtype=torch.long), torch.tensor(labels, dtype=torch.long)
 
 

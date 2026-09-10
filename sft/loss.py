@@ -17,4 +17,4 @@ def masked_cross_entropy(logits: torch.Tensor, labels: torch.Tensor) -> torch.Te
         logits.reshape(B * T, V), flat_labels, ignore_index=IGNORE_INDEX, reduction="none"
     )
     mask = (flat_labels != IGNORE_INDEX).float()
-    return (per_token * mask).sum() / mask.numel()
+    return (per_token * mask).sum() / mask.sum().clamp(min=1.0)

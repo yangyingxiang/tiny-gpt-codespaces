@@ -1,5 +1,5 @@
 {
-  "name": "tiny-gpt (Python 3.11 + PyTorch CPU)",
+  "name": "tiny-gpt SFT debugging exercise (Python 3.11 + PyTorch CPU)",
   "image": "mcr.microsoft.com/devcontainers/python:1-3.11-bookworm",
 
   "features": {

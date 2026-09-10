@@ -19,13 +19,14 @@ import torch
 import torch.nn as nn
 from torch.nn import functional as F
 
-from .config import GPTConfig
+from .config import ModelConfig
+from .loss import masked_cross_entropy
 
 
 class CausalSelfAttention(nn.Module):
     """Multi-head masked self-attention."""
 
-    def __init__(self, cfg: GPTConfig) -> None:
+    def __init__(self, cfg: ModelConfig) -> None:
         super().__init__()
         self.n_head = cfg.n_head
         self.head_dim = cfg.head_dim
@@ -63,7 +64,7 @@ class CausalSelfAttention(nn.Module):
 class MLP(nn.Module):
     """Position-wise feed-forward network with a 4x inner width."""
 
-    def __init__(self, cfg: GPTConfig) -> None:
+    def __init__(self, cfg: ModelConfig) -> None:
         super().__init__()
         self.fc = nn.Linear(cfg.n_embd, 4 * cfg.n_embd, bias=cfg.bias)
         self.proj = nn.Linear(4 * cfg.n_embd, cfg.n_embd, bias=cfg.bias)
@@ -76,7 +77,7 @@ class MLP(nn.Module):
 class Block(nn.Module):
     """Pre-norm transformer block: x + attn(ln(x)), then x + mlp(ln(x))."""
 
-    def __init__(self, cfg: GPTConfig) -> None:
+    def __init__(self, cfg: ModelConfig) -> None:
         super().__init__()
         self.ln1 = nn.LayerNorm(cfg.n_embd, bias=cfg.bias)
         self.attn = CausalSelfAttention(cfg)
@@ -92,7 +93,7 @@ class Block(nn.Module):
 class GPT(nn.Module):
     """Decoder-only transformer language model."""
 
-    def __init__(self, cfg: GPTConfig) -> None:
+    def __init__(self, cfg: ModelConfig) -> None:
         super().__init__()
         self.cfg = cfg
         self.tok_emb = nn.Embedding(cfg.vocab_size, cfg.n_embd)
@@ -125,8 +126,9 @@ class GPT(nn.Module):
             n -= self.pos_emb.weight.numel()
         return n
 
-    def forward(self, idx: torch.Tensor, targets: torch.Tensor | None = None):
-        """idx: (B, T) int64 token ids. Returns (logits, loss)."""
+    def forward(self, idx: torch.Tensor, labels: torch.Tensor | None = None):
+        """idx: (B, T) token ids; labels: (B, T) next-token targets (already shifted,
+        IGNORE_INDEX where there is no target). Returns (logits, loss)."""
         B, T = idx.shape
         if T > self.cfg.block_size:
             raise ValueError(f"sequence length {T} exceeds block_size {self.cfg.block_size}")
@@ -139,10 +141,8 @@ class GPT(nn.Module):
         logits = self.head(x)                                  # (B, T, vocab_size)
 
         loss = None
-        if targets is not None:
-            loss = F.cross_entropy(
-                logits.view(-1, logits.size(-1)), targets.reshape(-1)
-            )
+        if labels is not None:
+            loss = masked_cross_entropy(logits, labels)
         return logits, loss
 
     def configure_optimizer(self, weight_decay: float, learning_rate: float):
@@ -163,19 +163,33 @@ class GPT(nn.Module):
         self,
         idx: torch.Tensor,
         max_new_tokens: int,
-        temperature: float = 1.0,
+        eos_id: int | None = None,
+        temperature: float = 0.0,
         top_k: int | None = None,
     ) -> torch.Tensor:
-        """Autoregressively extend `idx` (B, T) by `max_new_tokens` tokens."""
+        """Extend `idx` (B, T) by up to `max_new_tokens` tokens; temperature 0 = greedy.
+        Stops early once every row has produced `eos_id`."""
+        was_training = self.training
         self.eval()
+        finished = torch.zeros(idx.size(0), 1, dtype=torch.bool, device=idx.device)
         for _ in range(max_new_tokens):
-            idx_cond = idx[:, -self.cfg.block_size :]      # crop to the context window
+            idx_cond = idx[:, -self.cfg.block_size :]
             logits, _ = self(idx_cond)
-            logits = logits[:, -1, :] / max(temperature, 1e-8)
-            if top_k is not None:
-                v, _ = torch.topk(logits, min(top_k, logits.size(-1)))
-                logits[logits < v[:, [-1]]] = float("-inf")
-            probs = F.softmax(logits, dim=-1)
-            next_id = torch.multinomial(probs, num_samples=1)
+            logits = logits[:, -1, :]
+            if temperature <= 0:
+                next_id = logits.argmax(dim=-1, keepdim=True)
+            else:
+                logits = logits / temperature
+                if top_k is not None:
+                    v, _ = torch.topk(logits, min(top_k, logits.size(-1)))
+                    logits[logits < v[:, [-1]]] = float("-inf")
+                next_id = torch.multinomial(F.softmax(logits, dim=-1), num_samples=1)
+            if eos_id is not None:
+                # rows that already finished keep emitting eos
+                next_id = torch.where(finished, torch.full_like(next_id, eos_id), next_id)
+                finished = finished | (next_id == eos_id)
             idx = torch.cat((idx, next_id), dim=1)
+            if eos_id is not None and bool(finished.all()):
+                break
+        self.train(was_training)
         return idx

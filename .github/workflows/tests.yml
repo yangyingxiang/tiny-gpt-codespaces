@@ -1,9 +1,11 @@
 name: tests
 
+# `main` is intentionally broken (it is the exercise), so CI runs on the
+# `solutions` branch, where every test should pass. Run it by hand on any
+# branch with "Run workflow".
 on:
   push:
-    branches: [main]
-  pull_request:
+    branches: [solutions]
   workflow_dispatch:
 
 jobs:
@@ -22,7 +24,7 @@ jobs:
           python -m pip install numpy pytest
       - name: Run tests
         run: python -m pytest -q tests
-      - name: Smoke-test the training loop
+      - name: Smoke-test training end to end
         run: |
-          python -m src.train --max_iters 20 --batch_size 4 --block_size 32 \
-            --n_layer 1 --n_head 1 --n_embd 32 --eval_interval 10 --eval_iters 2 --log_interval 5
+          python -m sft.train --max_iters 60 --eval_interval 30 --eval_examples 20 \
+            --final_eval_examples 20 --log_interval 20

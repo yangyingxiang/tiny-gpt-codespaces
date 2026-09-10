@@ -8,16 +8,22 @@
       "problemMatcher": []
     },
     {
-      "label": "prepare data",
+      "label": "train (quick, 300 iters)",
       "type": "shell",
-      "command": "python scripts/prepare_data.py",
+      "command": "python -m sft.train --max_iters 300 --eval_interval 100 --eval_examples 50 --final_eval_examples 100",
+      "group": "build",
       "problemMatcher": []
     },
     {
-      "label": "train (quick)",
+      "label": "train (full)",
       "type": "shell",
-      "command": "python -m src.train --max_iters 100 --log_interval 10",
-      "group": "build",
+      "command": "python -m sft.train",
+      "problemMatcher": []
+    },
+    {
+      "label": "evaluate checkpoint",
+      "type": "shell",
+      "command": "python -m sft.evaluate",
       "problemMatcher": []
     },
     {
@@ -28,9 +34,15 @@
       "problemMatcher": []
     },
     {
+      "label": "test parser spec (Part 1)",
+      "type": "shell",
+      "command": "python -m pytest -q tests/test_parser.py",
+      "problemMatcher": []
+    },
+    {
       "label": "debug server (attach on :5678)",
       "type": "shell",
-      "command": "python -m debugpy --listen 5678 --wait-for-client -m src.train --max_iters 50",
+      "command": "python -m debugpy --listen 5678 --wait-for-client -m sft.train --max_iters 300",
       "problemMatcher": []
     }
   ]

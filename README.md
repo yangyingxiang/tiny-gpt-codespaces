@@ -1,196 +1,138 @@
-# tiny-gpt-codespaces
+# tiny-gpt-codespaces — SFT debugging practice
 
-A small, readable **transformer training pipeline** (character-level GPT, pure PyTorch)
-that is set up to be **run and debugged entirely in the browser** via GitHub Codespaces,
-and **shared live** with someone else via VS Code Live Share.
+A small, readable **supervised fine-tuning (SFT) pipeline** for a tiny GPT, in pure PyTorch,
+with **defects planted in it on purpose**. It is built to practise the classic ML-engineer
+technical screen:
 
-No GPU required. A short training run finishes on a free 2-core Codespace in a couple of minutes.
+> *Given raw text files with noisy formatting, implement a robust parser that outputs
+> structured examples … In a provided ML project (data loading, preprocessing, training,
+> evaluation), identify and fix defects (e.g. index off-by-one in tokenization, train/test
+> leakage, incorrect loss reduction, nondeterministic seeding, shape mismatches) … and
+> describe how you would validate the fixes under a 60-minute time limit.*
 
----
+Everything runs on CPU. A full training run takes about 2–3 minutes on a free 2-core Codespace.
 
-## 1. Run it in VS Code in the browser (Codespaces)
+**Start here → [EXERCISE.md](EXERCISE.md)**
 
-1. Click **Code ▾ → Codespaces → Create codespace on main**.
-2. Wait for the container to build. `.devcontainer/post-create.sh` installs CPU-only PyTorch
-   and pre-downloads the TinyShakespeare corpus.
-3. Press <kbd>F5</kbd> and pick **"Train: quick debug run (50 iters, tiny model)"**.
-
-That's it — you are training and stepping through a transformer in a browser tab.
-
-> Prefer a terminal? `python -m src.train --max_iters 500`
-
-### Why Codespaces and not the `.` editor
-Pressing <kbd>.</kbd> on a GitHub repo opens **github.dev**, which is VS Code in the browser but
-with *no compute*: no terminal, no Python, no debugger. Codespaces runs a real container, which is
-what makes `F5` and breakpoints work.
+| Branch | What's on it |
+|---|---|
+| `main` | The exercise: a draft parser (Part 1) and an SFT pipeline with **6 planted bugs** (Part 2). |
+| `solutions` | Fixed code (one commit per fix), `SOLUTIONS.md` walkthrough, regression tests, the data generator. Don't peek until you're done. |
 
 ---
 
-## 2. Debugging
+## 1. Open it in the browser (Codespaces)
 
-`.vscode/launch.json` ships seven ready-made configurations:
+1. **Code ▾ → Codespaces → Create codespace on main**.
+2. Wait for `.devcontainer/post-create.sh` to install CPU-only PyTorch.
+3. Press <kbd>F5</kbd> → **"Train: quick debug run (300 iters)"**. (On `main` it will crash. That's the point.)
+
+Terminal equivalents:
+
+```bash
+python -m sft.train                         # full run (3000 iters)
+python -m sft.train --max_iters 300         # quick look
+python -m sft.evaluate                      # re-score checkpoints/model.pt on val + holdout
+python -m sft.generate --instruction "Reverse:" --input banana
+python -m pytest -q tests                   # tests/test_parser.py is the Part 1 spec
+```
+
+Pressing <kbd>.</kbd> on GitHub opens github.dev, which has no Python and no debugger. Use a Codespace
+(or clone locally, see §6).
+
+---
+
+## 2. The pipeline
+
+```
+data/raw/*.tsv ──parser──► records ──dedup + split──► train / val        data/holdout.jsonl
+                                                        │                        │
+             chat template + byte tokenizer + label mask ▼                        │
+         <|bos|><|user|>{instruction}\n{input}<|assistant|>{output}<|eos|>        │
+                                                        │                        │
+                        collate (right-pad, truncate) ──► (B, T) batches          │
+                                                        │                        │
+               GPT (2 layers, 128 wide, ~0.4M params) ──► masked next-token loss   │
+                                                        │                        │
+                         AdamW + warmup/cosine + clip ──► checkpoints/model.pt    │
+                                                        │                        │
+                             greedy generation ──► exact match on val  and  ◄─────┘
+```
+
+The model is fine-tuned from scratch on six tiny instruction tasks (`Reverse:`, `Uppercase:`,
+`Sort letters:`, `Length:`, `Count vowels:`, `Repeat:`) so that **exact-match accuracy is a
+meaningful metric** and a leak, a bad loss, or a broken label shows up in the numbers.
+
+| File | Stage |
+|---|---|
+| `sft/parser.py` | raw TSV bytes → records + `ParseReport` (**Part 1**) |
+| `sft/data.py` | dedup, train/val split, chat template, tokenization, label masking, collate |
+| `sft/tokenizer.py` | byte-level tokenizer + special tokens |
+| `sft/model.py` | decoder-only transformer, written out longhand; greedy/top-k `generate` |
+| `sft/loss.py` | masked cross-entropy |
+| `sft/train.py` | training loop, LR schedule, periodic eval, best-checkpoint, final metrics |
+| `sft/evaluate.py` | val loss, batched greedy exact match, standalone checkpoint eval |
+| `sft/utils.py` | seeding, device selection |
+| `data/raw/` | the noisy exports (UTF-8+BOM and cp1252, quoting, ragged rows, duplicates …) |
+| `data/holdout.jsonl` | a clean, separately-curated holdout set |
+
+---
+
+## 3. Debugging in the browser
+
+`.vscode/launch.json` ships ready-made configurations (all with `"justMyCode": false`, so you
+can step into PyTorch):
 
 | Configuration | What it does |
 |---|---|
-| **Train: quick debug run** | 50 iterations of a 2-layer model — fast enough to step through |
-| **Train: full run (500 iters)** | The default training run |
-| **Train: stop on first exception** | `stopOnEntry`, verbose logging, for post-mortem poking |
-| **Sample from checkpoint** | Generates text from `checkpoints/model.pt` |
-| **Pytest: all tests** | Runs the suite under the debugger |
-| **Python: current file** | Debug whatever file is open |
-| **Attach to running process** | Attaches to `debugpy` on port 5678 |
+| **Train: quick debug run (300 iters)** | fast enough to iterate on a fix |
+| **Train: full run** | the real run you compare against the reference numbers |
+| **Evaluate checkpoint** | re-scores `checkpoints/model.pt` on val and holdout |
+| **Generate: ask the checkpoint** | one prompt, greedy decode |
+| **Pytest: all tests** / **parser spec only** | tests under the debugger |
+| **Python: current file** | debug whatever is open |
+| **Attach to running process (:5678)** | for `python -m debugpy --listen 5678 --wait-for-client -m sft.train` |
 
-All of them set `"justMyCode": false`, so you can step *into* PyTorch itself.
-
-The editor's **Run / Debug Python File** button works too. `src/train.py` and `src/sample.py`
-re-attach themselves to the `src` package when run as a plain script, so you get the same
-result as `python -m src.train` without the classic *"attempted relative import with no known
-parent package"* error. The launch configurations are still the better route, since they pass
-sensible arguments; the button runs with defaults.
-
-**Good places to put a breakpoint** (marked with `# BREAKPOINT:` in the source):
-
-- `src/train.py` → right after `dataset.get_batch(...)` — inspect a `(B, T)` batch of token ids.
-- `src/model.py` → `CausalSelfAttention.forward` — watch `q`, `k`, `v` reshape from
-  `(B, T, C)` to `(B, nh, T, hd)`, and watch the causal mask turn the upper triangle into `-inf`.
-- `src/train.py` → the eval block — watch train and val loss separate.
-- `src/sample.py` → `model.generate` — watch tokens being sampled one at a time.
-
-`debug.inlineValues` is on, so tensor shapes appear inline next to the code as you step.
-
-### Attach-mode debugging
-```bash
-python -m debugpy --listen 5678 --wait-for-client -m src.train --max_iters 50
-```
-Then run **"Attach to running process (debugpy :5678)"**. Port 5678 is already forwarded.
+Useful breakpoints are marked `# BREAKPOINT:` in the source. At the batch breakpoint in
+`sft/train.py`, `tok.decode(x[0].tolist(), skip_special=False)` in the Debug Console shows you
+exactly what the model sees. `debug.inlineValues` is on, so tensor shapes show up inline.
 
 ---
 
-## 3. Live Share (collaborative debugging)
+## 4. Live Share (mock interviews)
 
-The **`ms-vsliveshare.vsliveshare`** extension is preinstalled by the devcontainer, and
-`.vscode/settings.json` pre-approves guest debug/task control.
-
-1. In the codespace, click **Live Share** in the status bar (or <kbd>Ctrl/Cmd</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> → *Live Share: Start Collaboration Session*).
-2. Sign in with GitHub when prompted; the invite link is copied to your clipboard.
-3. Send the link. Your guest joins in their browser — no clone, no install, no PyTorch download.
-4. Start a debug session. Breakpoints, the call stack, watches and the debug console are
-   **shared** — either of you can step, and both see the same variables.
-
-Relevant settings you may want to change in `.vscode/settings.json`:
-
-| Setting | Default here | Meaning |
-|---|---|---|
-| `liveshare.guestApprovalRequired` | `true` | you approve each guest before they join |
-| `liveshare.allowGuestDebugControl` | `true` | guests can step/continue the debugger |
-| `liveshare.allowGuestTaskControl` | `true` | guests can run the tasks in `tasks.json` |
-| `liveshare.shareExternalFiles` | `false` | guests only see files inside this repo |
-
-> Live Share is a *session*, not a repo setting — nothing is shared until you start one.
+Live Share is preinstalled. Start a session from the status bar, send the link, and your partner
+joins in their browser with shared breakpoints, call stack and debug console. Guests need your
+approval to join (`liveshare.guestApprovalRequired`) and can step the debugger and run tasks
+(`allowGuestDebugControl`, `allowGuestTaskControl` in `.vscode/settings.json`). A good format:
+one person drives on `main`, the other plays interviewer with `SOLUTIONS.md` open.
 
 ---
 
-## 4. The model
-
-A decoder-only transformer written out longhand (no `nn.MultiheadAttention`), so every
-tensor operation is visible in the debugger.
-
-```
-tokens ─► token embedding + positional embedding ─► dropout
-       ─► N × [ x + attn(LayerNorm(x)) ; x + mlp(LayerNorm(x)) ]     (pre-norm blocks)
-       ─► final LayerNorm ─► linear head (weights tied to the embedding) ─► logits
-```
-
-Defaults: 4 layers, 4 heads, `n_embd=128`, `block_size=128` → **~0.8M parameters**.
-Trained on TinyShakespeare (~1.1M characters, 65-symbol vocabulary) to predict the next character.
-
-Includes: causal masking, weight tying, GPT-2 scaled residual init, AdamW with decay applied
-only to matrices, linear warmup + cosine LR decay, gradient clipping, periodic eval and
-best-checkpoint saving, and top-k/temperature sampling.
-
----
-
-## 5. Project layout
-
-```
-.devcontainer/
-  devcontainer.json     Codespaces image, extensions (incl. Live Share), ports
-  post-create.sh        installs CPU-only torch, pre-downloads the corpus
-.vscode/
-  launch.json           7 debug configurations
-  settings.json         pytest + Live Share + inline debug values
-  tasks.json            install / prepare / train / test / debug-server
-  extensions.json       recommended extensions
-src/
-  config.py             GPTConfig + TrainConfig dataclasses, CLI parsing
-  data.py               corpus download, char tokenizer, batching
-  model.py              CausalSelfAttention, MLP, Block, GPT
-  train.py              training loop, LR schedule, eval, checkpointing
-  sample.py             text generation from a checkpoint
-tests/
-  test_pipeline.py      9 fast tests (causality, overfit-one-batch, LR schedule, ...)
-scripts/
-  prepare_data.py       pre-download hook
-```
-
----
-
-## 6. Command line
+## 5. Practising again
 
 ```bash
-python -m src.train --help          # every dataclass field is a flag
-
-python -m src.train --max_iters 500                    # default run (~3 min on 2 cores)
-python -m src.train --max_iters 3000 --n_layer 6       # readable Shakespeare-ish output
-python -m src.train --device cpu --batch_size 8        # gentler on a small codespace
-python src/train.py --max_iters 50                     # running as a script works too
-
-python -m src.sample --prompt "ROMEO:" --max_new_tokens 400 --temperature 0.8 --top_k 40
-
-python -m pytest -q tests
+git stash                     # or: git checkout main -- sft/
 ```
 
-Key flags: `--n_layer --n_head --n_embd --block_size --dropout --bias`
-and `--max_iters --batch_size --learning_rate --weight_decay --grad_clip
---warmup_iters --eval_interval --eval_iters --log_interval --seed --device --out_dir`.
+puts the bugs back. Grade yourself without reading the fixes:
 
-`--compile_model true` enables `torch.compile` — faster, but it hides Python frames from the
-debugger, so leave it off while stepping.
+```bash
+git fetch origin solutions
+git checkout origin/solutions -- tests/test_regressions.py
+python -m pytest -q tests/test_regressions.py      # 9 tests, one or two per planted bug
+```
 
 ---
 
-## 7. What a run looks like
-
-```
-CharDataset(vocab_size=65, train_tokens=1003854, val_tokens=111540, block_size=128)
-parameters: 0.81M
-iter     0 | loss 4.1833 | lr 6.00e-06 | grad_norm 2.58 | 0.0s
-iter    50 | loss 3.6393 | lr 3.00e-04 | grad_norm 1.05 | 0.7s
-  eval @ 50: train 3.5909 | val 3.6068
-  saved checkpoint -> checkpoints/model.pt (val 3.6068)
-...
-```
-
-Loss starts near `ln(65) ≈ 4.17` (a uniform guess over the vocabulary) and falls from there.
-After 500 iterations you get word-shaped nonsense with correct play formatting; a few thousand
-iterations gets you recognisable dialogue.
-
----
-
-## 8. Running locally instead
+## 6. Running locally
 
 ```bash
 git clone https://github.com/yangyingxiang/tiny-gpt-codespaces.git
 cd tiny-gpt-codespaces
 python -m pip install --index-url https://download.pytorch.org/whl/cpu torch
 python -m pip install numpy pytest
-python -m src.train --max_iters 500
+python -m sft.train
 ```
 
-Or open the folder in VS Code with the **Dev Containers** extension and choose
-*Reopen in Container* — same environment as the codespace.
-
----
-
-MIT licensed. Built as a teaching/demo pipeline; the model architecture follows the standard
-GPT-2 recipe at a scale that fits in a debugger.
+MIT licensed.

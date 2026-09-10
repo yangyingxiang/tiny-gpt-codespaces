@@ -1,0 +1,400 @@
+{"id": "h0000", "instruction": "Repeat:", "input": "she said \"loss a reads\"", "output": "she said \"loss a reads\""}
+{"id": "h0001", "instruction": "Repeat:", "input": "losing exactly loss", "output": "losing exactly loss"}
+{"id": "h0002", "instruction": "Length:", "input": "rc", "output": "2"}
+{"id": "h0003", "instruction": "Uppercase:", "input": "nrjtjy", "output": "NRJTJY"}
+{"id": "h0004", "instruction": "Reverse:", "input": "sslsjeqi", "output": "iqejslss"}
+{"id": "h0005", "instruction": "Uppercase:", "input": "ydwqmcy", "output": "YDWQMCY"}
+{"id": "h0006", "instruction": "Reverse:", "input": "mprcb", "output": "bcrpm"}
+{"id": "h0007", "instruction": "Reverse:", "input": "ioitxy", "output": "yxtioi"}
+{"id": "h0008", "instruction": "Sort letters:", "input": "qjyzcx", "output": "cjqxyz"}
+{"id": "h0009", "instruction": "Count vowels:", "input": "pmymzk", "output": "0"}
+{"id": "h0010", "instruction": "Sort letters:", "input": "aroy", "output": "aory"}
+{"id": "h0011", "instruction": "Repeat:", "input": "to déjà", "output": "to déjà"}
+{"id": "h0012", "instruction": "Uppercase:", "input": "hchvtz", "output": "HCHVTZ"}
+{"id": "h0013", "instruction": "Uppercase:", "input": "hhabdifwq", "output": "HHABDIFWQ"}
+{"id": "h0014", "instruction": "Reverse:", "input": "iuhz", "output": "zhui"}
+{"id": "h0015", "instruction": "Reverse:", "input": "eiquyva", "output": "avyuqie"}
+{"id": "h0016", "instruction": "Reverse:", "input": "qls", "output": "slq"}
+{"id": "h0017", "instruction": "Sort letters:", "input": "vqyh", "output": "hqvy"}
+{"id": "h0018", "instruction": "Reverse:", "input": "dsj", "output": "jsd"}
+{"id": "h0019", "instruction": "Reverse:", "input": "gnb", "output": "bng"}
+{"id": "h0020", "instruction": "Sort letters:", "input": "xvwosk", "output": "kosvwx"}
+{"id": "h0021", "instruction": "Reverse:", "input": "ttxnub", "output": "bunxtt"}
+{"id": "h0022", "instruction": "Count vowels:", "input": "rmyvdiaeq", "output": "3"}
+{"id": "h0023", "instruction": "Length:", "input": "zkzocgk", "output": "7"}
+{"id": "h0024", "instruction": "Sort letters:", "input": "xozzj", "output": "joxzz"}
+{"id": "h0025", "instruction": "Reverse:", "input": "rlejbbew", "output": "webbjelr"}
+{"id": "h0026", "instruction": "Uppercase:", "input": "nwrgy", "output": "NWRGY"}
+{"id": "h0027", "instruction": "Reverse:", "input": "zqljr", "output": "rjlqz"}
+{"id": "h0028", "instruction": "Uppercase:", "input": "bjnkhr", "output": "BJNKHR"}
+{"id": "h0029", "instruction": "Reverse:", "input": "lsudhgsr", "output": "rsghdusl"}
+{"id": "h0030", "instruction": "Uppercase:", "input": "mtrfn", "output": "MTRFN"}
+{"id": "h0031", "instruction": "Repeat:", "input": "and über batch", "output": "and über batch"}
+{"id": "h0032", "instruction": "Reverse:", "input": "bketrtlw", "output": "wltrtekb"}
+{"id": "h0033", "instruction": "Uppercase:", "input": "lepkoxwn", "output": "LEPKOXWN"}
+{"id": "h0034", "instruction": "Uppercase:", "input": "emsiwuall", "output": "EMSIWUALL"}
+{"id": "h0035", "instruction": "Count vowels:", "input": "qmiancnx", "output": "2"}
+{"id": "h0036", "instruction": "Count vowels:", "input": "vlwzxzuqg", "output": "1"}
+{"id": "h0037", "instruction": "Reverse:", "input": "gxdcjup", "output": "pujcdxg"}
+{"id": "h0038", "instruction": "Uppercase:", "input": "irjo", "output": "IRJO"}
+{"id": "h0039", "instruction": "Uppercase:", "input": "kfjrqa", "output": "KFJRQA"}
+{"id": "h0040", "instruction": "Reverse:", "input": "myj", "output": "jym"}
+{"id": "h0041", "instruction": "Count vowels:", "input": "sxbjpsyh", "output": "0"}
+{"id": "h0042", "instruction": "Sort letters:", "input": "ejbb", "output": "bbej"}
+{"id": "h0043", "instruction": "Reverse:", "input": "hizp", "output": "pzih"}
+{"id": "h0044", "instruction": "Uppercase:", "input": "qbqdnr", "output": "QBQDNR"}
+{"id": "h0045", "instruction": "Repeat:", "input": "she said \"line gradient\"", "output": "she said \"line gradient\""}
+{"id": "h0046", "instruction": "Reverse:", "input": "lxxn", "output": "nxxl"}
+{"id": "h0047", "instruction": "Uppercase:", "input": "jcglks", "output": "JCGLKS"}
+{"id": "h0048", "instruction": "Sort letters:", "input": "xcr", "output": "crx"}
+{"id": "h0049", "instruction": "Repeat:", "input": "without of", "output": "without of"}
+{"id": "h0050", "instruction": "Sort letters:", "input": "zyghd", "output": "dghyz"}
+{"id": "h0051", "instruction": "Reverse:", "input": "dhol", "output": "lohd"}
+{"id": "h0052", "instruction": "Repeat:", "input": "quick\ta and exactly small reads batch", "output": "quick\ta and exactly small reads batch"}
+{"id": "h0053", "instruction": "Sort letters:", "input": "lfgyrt", "output": "fglrty"}
+{"id": "h0054", "instruction": "Reverse:", "input": "swrsdk", "output": "kdsrws"}
+{"id": "h0055", "instruction": "Count vowels:", "input": "epzpb", "output": "1"}
+{"id": "h0056", "instruction": "Reverse:", "input": "oqvwoi", "output": "iowvqo"}
+{"id": "h0057", "instruction": "Sort letters:", "input": "jhc", "output": "chj"}
+{"id": "h0058", "instruction": "Sort letters:", "input": "wahwoyc", "output": "achowwy"}
+{"id": "h0059", "instruction": "Reverse:", "input": "ttj", "output": "jtt"}
+{"id": "h0060", "instruction": "Uppercase:", "input": "feqgklpu", "output": "FEQGKLPU"}
+{"id": "h0061", "instruction": "Length:", "input": "znaamofxmoof", "output": "12"}
+{"id": "h0062", "instruction": "Uppercase:", "input": "zvlcuz", "output": "ZVLCUZ"}
+{"id": "h0063", "instruction": "Reverse:", "input": "boitq", "output": "qtiob"}
+{"id": "h0064", "instruction": "Uppercase:", "input": "vxgmj", "output": "VXGMJ"}
+{"id": "h0065", "instruction": "Uppercase:", "input": "bymgcwnw", "output": "BYMGCWNW"}
+{"id": "h0066", "instruction": "Reverse:", "input": "wngtstjq", "output": "qjtstgnw"}
+{"id": "h0067", "instruction": "Sort letters:", "input": "aaes", "output": "aaes"}
+{"id": "h0068", "instruction": "Reverse:", "input": "urxpcpz", "output": "zpcpxru"}
+{"id": "h0069", "instruction": "Sort letters:", "input": "mxhckbjv", "output": "bchjkmvx"}
+{"id": "h0070", "instruction": "Reverse:", "input": "mhb", "output": "bhm"}
+{"id": "h0071", "instruction": "Reverse:", "input": "scmuh", "output": "humcs"}
+{"id": "h0072", "instruction": "Reverse:", "input": "peazvid", "output": "divzaep"}
+{"id": "h0073", "instruction": "Repeat:", "input": "she said \"data gradient line it parser señor of\"", "output": "she said \"data gradient line it parser señor of\""}
+{"id": "h0074", "instruction": "Uppercase:", "input": "tmh", "output": "TMH"}
+{"id": "h0075", "instruction": "Sort letters:", "input": "meg", "output": "egm"}
+{"id": "h0076", "instruction": "Sort letters:", "input": "rnelgcwy", "output": "ceglnrwy"}
+{"id": "h0077", "instruction": "Repeat:", "input": "text of of", "output": "text of of"}
+{"id": "h0078", "instruction": "Sort letters:", "input": "fpmdhxyc", "output": "cdfhmpxy"}
+{"id": "h0079", "instruction": "Sort letters:", "input": "cbph", "output": "bchp"}
+{"id": "h0080", "instruction": "Reverse:", "input": "oqczeln", "output": "nlezcqo"}
+{"id": "h0081", "instruction": "Repeat:", "input": "character a", "output": "character a"}
+{"id": "h0082", "instruction": "Reverse:", "input": "gmgygmhh", "output": "hhmgygmg"}
+{"id": "h0083", "instruction": "Uppercase:", "input": "nrogs", "output": "NROGS"}
+{"id": "h0084", "instruction": "Sort letters:", "input": "lrnctlep", "output": "cellnprt"}
+{"id": "h0085", "instruction": "Reverse:", "input": "mytnlgpr", "output": "rpglntym"}
+{"id": "h0086", "instruction": "Uppercase:", "input": "zotdkdyji", "output": "ZOTDKDYJI"}
+{"id": "h0087", "instruction": "Reverse:", "input": "jiyhtg", "output": "gthyij"}
+{"id": "h0088", "instruction": "Reverse:", "input": "lmvjngtg", "output": "gtgnjvml"}
+{"id": "h0089", "instruction": "Reverse:", "input": "mfsqgk", "output": "kgqsfm"}
+{"id": "h0090", "instruction": "Sort letters:", "input": "dozpz", "output": "dopzz"}
+{"id": "h0091", "instruction": "Sort letters:", "input": "pco", "output": "cop"}
+{"id": "h0092", "instruction": "Reverse:", "input": "srindgy", "output": "ygdnirs"}
+{"id": "h0093", "instruction": "Count vowels:", "input": "fvtctp", "output": "0"}
+{"id": "h0094", "instruction": "Reverse:", "input": "vzss", "output": "sszv"}
+{"id": "h0095", "instruction": "Repeat:", "input": "she said \"loss line\"", "output": "she said \"loss line\""}
+{"id": "h0096", "instruction": "Uppercase:", "input": "ktcmlo", "output": "KTCMLO"}
+{"id": "h0097", "instruction": "Reverse:", "input": "itn", "output": "nti"}
+{"id": "h0098", "instruction": "Repeat:", "input": "a résumé", "output": "a résumé"}
+{"id": "h0099", "instruction": "Sort letters:", "input": "hfe", "output": "efh"}
+{"id": "h0100", "instruction": "Repeat:", "input": "single\tnaïve", "output": "single\tnaïve"}
+{"id": "h0101", "instruction": "Length:", "input": "thxe", "output": "4"}
+{"id": "h0102", "instruction": "Reverse:", "input": "wufoht", "output": "thofuw"}
+{"id": "h0103", "instruction": "Count vowels:", "input": "xnqyopgoma", "output": "3"}
+{"id": "h0104", "instruction": "Sort letters:", "input": "osbzenpt", "output": "benopstz"}
+{"id": "h0105", "instruction": "Reverse:", "input": "mltitw", "output": "wtitlm"}
+{"id": "h0106", "instruction": "Length:", "input": "nyijpuvuz", "output": "9"}
+{"id": "h0107", "instruction": "Reverse:", "input": "vpscwsmr", "output": "rmswcspv"}
+{"id": "h0108", "instruction": "Count vowels:", "input": "jchycnwjs", "output": "0"}
+{"id": "h0109", "instruction": "Uppercase:", "input": "uugy", "output": "UUGY"}
+{"id": "h0110", "instruction": "Reverse:", "input": "whiv", "output": "vihw"}
+{"id": "h0111", "instruction": "Length:", "input": "gtls", "output": "4"}
+{"id": "h0112", "instruction": "Sort letters:", "input": "jtynzzh", "output": "hjntyzz"}
+{"id": "h0113", "instruction": "Count vowels:", "input": "ibkdrgtkz", "output": "1"}
+{"id": "h0114", "instruction": "Reverse:", "input": "krd", "output": "drk"}
+{"id": "h0115", "instruction": "Uppercase:", "input": "ynzkcvu", "output": "YNZKCVU"}
+{"id": "h0116", "instruction": "Uppercase:", "input": "dcpw", "output": "DCPW"}
+{"id": "h0117", "instruction": "Repeat:", "input": "to back", "output": "to back"}
+{"id": "h0118", "instruction": "Uppercase:", "input": "opv", "output": "OPV"}
+{"id": "h0119", "instruction": "Count vowels:", "input": "kzci", "output": "1"}
+{"id": "h0120", "instruction": "Sort letters:", "input": "kqw", "output": "kqw"}
+{"id": "h0121", "instruction": "Reverse:", "input": "ouwy", "output": "ywuo"}
+{"id": "h0122", "instruction": "Sort letters:", "input": "pqeku", "output": "ekpqu"}
+{"id": "h0123", "instruction": "Reverse:", "input": "zierxpvf", "output": "fvpxreiz"}
+{"id": "h0124", "instruction": "Uppercase:", "input": "sxbyia", "output": "SXBYIA"}
+{"id": "h0125", "instruction": "Reverse:", "input": "miupc", "output": "cpuim"}
+{"id": "h0126", "instruction": "Uppercase:", "input": "qrmwv", "output": "QRMWV"}
+{"id": "h0127", "instruction": "Length:", "input": "utlnzodcc", "output": "9"}
+{"id": "h0128", "instruction": "Reverse:", "input": "izcc", "output": "cczi"}
+{"id": "h0129", "instruction": "Sort letters:", "input": "pjh", "output": "hjp"}
+{"id": "h0130", "instruction": "Sort letters:", "input": "lyuweggx", "output": "eggluwxy"}
+{"id": "h0131", "instruction": "Uppercase:", "input": "ulmsz", "output": "ULMSZ"}
+{"id": "h0132", "instruction": "Count vowels:", "input": "gsnph", "output": "0"}
+{"id": "h0133", "instruction": "Reverse:", "input": "igmxvz", "output": "zvxmgi"}
+{"id": "h0134", "instruction": "Length:", "input": "kiwjzbfcxtn", "output": "11"}
+{"id": "h0135", "instruction": "Reverse:", "input": "mlw", "output": "wlm"}
+{"id": "h0136", "instruction": "Sort letters:", "input": "yndeq", "output": "denqy"}
+{"id": "h0137", "instruction": "Sort letters:", "input": "iduzwy", "output": "diuwyz"}
+{"id": "h0138", "instruction": "Repeat:", "input": "the losing and without parser back copy back text", "output": "the losing and without parser back copy back text"}
+{"id": "h0139", "instruction": "Sort letters:", "input": "asxwn", "output": "answx"}
+{"id": "h0140", "instruction": "Repeat:", "input": "losing jalapeño über", "output": "losing jalapeño über"}
+{"id": "h0141", "instruction": "Sort letters:", "input": "wrvgrdde", "output": "ddegrrvw"}
+{"id": "h0142", "instruction": "Sort letters:", "input": "wfwewqu", "output": "efquwww"}
+{"id": "h0143", "instruction": "Uppercase:", "input": "ifhxmeqb", "output": "IFHXMEQB"}
+{"id": "h0144", "instruction": "Count vowels:", "input": "ovwli", "output": "2"}
+{"id": "h0145", "instruction": "Sort letters:", "input": "gvsuo", "output": "gosuv"}
+{"id": "h0146", "instruction": "Uppercase:", "input": "kjkz", "output": "KJKZ"}
+{"id": "h0147", "instruction": "Length:", "input": "zij", "output": "3"}
+{"id": "h0148", "instruction": "Repeat:", "input": "loss gradient", "output": "loss gradient"}
+{"id": "h0149", "instruction": "Sort letters:", "input": "kbsaitn", "output": "abiknst"}
+{"id": "h0150", "instruction": "Length:", "input": "xa", "output": "2"}
+{"id": "h0151", "instruction": "Repeat:", "input": "résumé quick batch", "output": "résumé quick batch"}
+{"id": "h0152", "instruction": "Sort letters:", "input": "noullecx", "output": "cellnoux"}
+{"id": "h0153", "instruction": "Sort letters:", "input": "rsukh", "output": "hkrsu"}
+{"id": "h0154", "instruction": "Length:", "input": "bojmdwyztcm", "output": "11"}
+{"id": "h0155", "instruction": "Sort letters:", "input": "ktqvjd", "output": "djkqtv"}
+{"id": "h0156", "instruction": "Length:", "input": "cygwckpj", "output": "8"}
+{"id": "h0157", "instruction": "Count vowels:", "input": "ihspoq", "output": "2"}
+{"id": "h0158", "instruction": "Reverse:", "input": "cmyialu", "output": "ulaiymc"}
+{"id": "h0159", "instruction": "Reverse:", "input": "trumsm", "output": "msmurt"}
+{"id": "h0160", "instruction": "Sort letters:", "input": "rqqhu", "output": "hqqru"}
+{"id": "h0161", "instruction": "Uppercase:", "input": "somllttd", "output": "SOMLLTTD"}
+{"id": "h0162", "instruction": "Length:", "input": "acwuiwz", "output": "7"}
+{"id": "h0163", "instruction": "Count vowels:", "input": "jsqvqdivav", "output": "2"}
+{"id": "h0164", "instruction": "Reverse:", "input": "pzqhkg", "output": "gkhqzp"}
+{"id": "h0165", "instruction": "Reverse:", "input": "zoo", "output": "ooz"}
+{"id": "h0166", "instruction": "Sort letters:", "input": "ecswlhy", "output": "cehlswy"}
+{"id": "h0167", "instruction": "Reverse:", "input": "pdgxwl", "output": "lwxgdp"}
+{"id": "h0168", "instruction": "Sort letters:", "input": "hahmqlew", "output": "aehhlmqw"}
+{"id": "h0169", "instruction": "Reverse:", "input": "aqfsvps", "output": "spvsfqa"}
+{"id": "h0170", "instruction": "Reverse:", "input": "lzbjkqf", "output": "fqkjbzl"}
+{"id": "h0171", "instruction": "Reverse:", "input": "uimeqb", "output": "bqemiu"}
+{"id": "h0172", "instruction": "Reverse:", "input": "rekb", "output": "bker"}
+{"id": "h0173", "instruction": "Sort letters:", "input": "iujenco", "output": "ceijnou"}
+{"id": "h0174", "instruction": "Repeat:", "input": "losing learns back", "output": "losing learns back"}
+{"id": "h0175", "instruction": "Sort letters:", "input": "zmrm", "output": "mmrz"}
+{"id": "h0176", "instruction": "Uppercase:", "input": "slplekh", "output": "SLPLEKH"}
+{"id": "h0177", "instruction": "Sort letters:", "input": "gzlan", "output": "aglnz"}
+{"id": "h0178", "instruction": "Reverse:", "input": "iseqtdd", "output": "ddtqesi"}
+{"id": "h0179", "instruction": "Repeat:", "input": "parser of", "output": "parser of"}
+{"id": "h0180", "instruction": "Uppercase:", "input": "digwwh", "output": "DIGWWH"}
+{"id": "h0181", "instruction": "Reverse:", "input": "kio", "output": "oik"}
+{"id": "h0182", "instruction": "Uppercase:", "input": "hhjrzvbr", "output": "HHJRZVBR"}
+{"id": "h0183", "instruction": "Reverse:", "input": "wbqacuby", "output": "ybucaqbw"}
+{"id": "h0184", "instruction": "Repeat:", "input": "learns loss parser model to señor to data", "output": "learns loss parser model to señor to data"}
+{"id": "h0185", "instruction": "Reverse:", "input": "pldc", "output": "cdlp"}
+{"id": "h0186", "instruction": "Reverse:", "input": "qpq", "output": "qpq"}
+{"id": "h0187", "instruction": "Reverse:", "input": "ferswqaw", "output": "waqwsref"}
+{"id": "h0188", "instruction": "Length:", "input": "bw", "output": "2"}
+{"id": "h0189", "instruction": "Sort letters:", "input": "gbuxh", "output": "bghux"}
+{"id": "h0190", "instruction": "Sort letters:", "input": "whnfquum", "output": "fhmnquuw"}
+{"id": "h0191", "instruction": "Count vowels:", "input": "emoqovdg", "output": "3"}
+{"id": "h0192", "instruction": "Reverse:", "input": "ksdbahlw", "output": "wlhabdsk"}
+{"id": "h0193", "instruction": "Reverse:", "input": "wij", "output": "jiw"}
+{"id": "h0194", "instruction": "Sort letters:", "input": "gxiklx", "output": "giklxx"}
+{"id": "h0195", "instruction": "Reverse:", "input": "ndbedy", "output": "ydebdn"}
+{"id": "h0196", "instruction": "Sort letters:", "input": "gsgliymo", "output": "ggilmosy"}
+{"id": "h0197", "instruction": "Reverse:", "input": "rzitowfz", "output": "zfwotizr"}
+{"id": "h0198", "instruction": "Count vowels:", "input": "onzgra", "output": "2"}
+{"id": "h0199", "instruction": "Count vowels:", "input": "vvnimt", "output": "1"}
+{"id": "h0200", "instruction": "Count vowels:", "input": "ounsbijza", "output": "4"}
+{"id": "h0201", "instruction": "Reverse:", "input": "ksgrjy", "output": "yjrgsk"}
+{"id": "h0202", "instruction": "Reverse:", "input": "vhrn", "output": "nrhv"}
+{"id": "h0203", "instruction": "Count vowels:", "input": "dnkufj", "output": "1"}
+{"id": "h0204", "instruction": "Count vowels:", "input": "nmsjk", "output": "0"}
+{"id": "h0205", "instruction": "Reverse:", "input": "jyirq", "output": "qriyj"}
+{"id": "h0206", "instruction": "Count vowels:", "input": "ndhccvl", "output": "0"}
+{"id": "h0207", "instruction": "Reverse:", "input": "yto", "output": "oty"}
+{"id": "h0208", "instruction": "Uppercase:", "input": "jadtv", "output": "JADTV"}
+{"id": "h0209", "instruction": "Sort letters:", "input": "mpjx", "output": "jmpx"}
+{"id": "h0210", "instruction": "Sort letters:", "input": "lxucpux", "output": "clpuuxx"}
+{"id": "h0211", "instruction": "Sort letters:", "input": "ktenck", "output": "cekknt"}
+{"id": "h0212", "instruction": "Reverse:", "input": "jgmgnji", "output": "ijngmgj"}
+{"id": "h0213", "instruction": "Uppercase:", "input": "tkzwddgo", "output": "TKZWDDGO"}
+{"id": "h0214", "instruction": "Sort letters:", "input": "imitu", "output": "iimtu"}
+{"id": "h0215", "instruction": "Repeat:", "input": "reads losing model", "output": "reads losing model"}
+{"id": "h0216", "instruction": "Sort letters:", "input": "wdesrwkb", "output": "bdekrsww"}
+{"id": "h0217", "instruction": "Length:", "input": "akpl", "output": "4"}
+{"id": "h0218", "instruction": "Uppercase:", "input": "oww", "output": "OWW"}
+{"id": "h0219", "instruction": "Uppercase:", "input": "dorhlhv", "output": "DORHLHV"}
+{"id": "h0220", "instruction": "Sort letters:", "input": "sgl", "output": "gls"}
+{"id": "h0221", "instruction": "Reverse:", "input": "gufet", "output": "tefug"}
+{"id": "h0222", "instruction": "Uppercase:", "input": "fvjtk", "output": "FVJTK"}
+{"id": "h0223", "instruction": "Reverse:", "input": "azslsry", "output": "yrslsza"}
+{"id": "h0224", "instruction": "Repeat:", "input": "she said \"batch parser\"", "output": "she said \"batch parser\""}
+{"id": "h0225", "instruction": "Count vowels:", "input": "vmxko", "output": "1"}
+{"id": "h0226", "instruction": "Reverse:", "input": "stgwhuj", "output": "juhwgts"}
+{"id": "h0227", "instruction": "Sort letters:", "input": "llqpdywt", "output": "dllpqtwy"}
+{"id": "h0228", "instruction": "Sort letters:", "input": "yjiksgy", "output": "gijksyy"}
+{"id": "h0229", "instruction": "Repeat:", "input": "a café to", "output": "a café to"}
+{"id": "h0230", "instruction": "Sort letters:", "input": "ihnqwfk", "output": "fhiknqw"}
+{"id": "h0231", "instruction": "Uppercase:", "input": "rcagft", "output": "RCAGFT"}
+{"id": "h0232", "instruction": "Uppercase:", "input": "uonjzwakd", "output": "UONJZWAKD"}
+{"id": "h0233", "instruction": "Sort letters:", "input": "uxfsp", "output": "fpsux"}
+{"id": "h0234", "instruction": "Sort letters:", "input": "twn", "output": "ntw"}
+{"id": "h0235", "instruction": "Uppercase:", "input": "mpuhmhznn", "output": "MPUHMHZNN"}
+{"id": "h0236", "instruction": "Reverse:", "input": "azmhluka", "output": "akulhmza"}
+{"id": "h0237", "instruction": "Length:", "input": "vfcszohe", "output": "8"}
+{"id": "h0238", "instruction": "Reverse:", "input": "jgl", "output": "lgj"}
+{"id": "h0239", "instruction": "Uppercase:", "input": "pqfn", "output": "PQFN"}
+{"id": "h0240", "instruction": "Sort letters:", "input": "cvi", "output": "civ"}
+{"id": "h0241", "instruction": "Reverse:", "input": "ucgrz", "output": "zrgcu"}
+{"id": "h0242", "instruction": "Reverse:", "input": "iajpsj", "output": "jspjai"}
+{"id": "h0243", "instruction": "Repeat:", "input": "learns model and", "output": "learns model and"}
+{"id": "h0244", "instruction": "Uppercase:", "input": "rdcd", "output": "RDCD"}
+{"id": "h0245", "instruction": "Repeat:", "input": "a to", "output": "a to"}
+{"id": "h0246", "instruction": "Reverse:", "input": "penqzlz", "output": "zlzqnep"}
+{"id": "h0247", "instruction": "Uppercase:", "input": "lcahnp", "output": "LCAHNP"}
+{"id": "h0248", "instruction": "Repeat:", "input": "small model back", "output": "small model back"}
+{"id": "h0249", "instruction": "Sort letters:", "input": "wtknr", "output": "knrtw"}
+{"id": "h0250", "instruction": "Repeat:", "input": "character of it quick small line to small", "output": "character of it quick small line to small"}
+{"id": "h0251", "instruction": "Count vowels:", "input": "zjrasawmj", "output": "2"}
+{"id": "h0252", "instruction": "Sort letters:", "input": "anorhk", "output": "ahknor"}
+{"id": "h0253", "instruction": "Uppercase:", "input": "tfvterv", "output": "TFVTERV"}
+{"id": "h0254", "instruction": "Length:", "input": "npcnisxurt", "output": "10"}
+{"id": "h0255", "instruction": "Sort letters:", "input": "fukhn", "output": "fhknu"}
+{"id": "h0256", "instruction": "Sort letters:", "input": "uzymr", "output": "mruyz"}
+{"id": "h0257", "instruction": "Reverse:", "input": "cxwjy", "output": "yjwxc"}
+{"id": "h0258", "instruction": "Sort letters:", "input": "ywom", "output": "mowy"}
+{"id": "h0259", "instruction": "Uppercase:", "input": "tcno", "output": "TCNO"}
+{"id": "h0260", "instruction": "Length:", "input": "duci", "output": "4"}
+{"id": "h0261", "instruction": "Uppercase:", "input": "eqouo", "output": "EQOUO"}
+{"id": "h0262", "instruction": "Reverse:", "input": "caowulcj", "output": "jcluwoac"}
+{"id": "h0263", "instruction": "Count vowels:", "input": "yiaai", "output": "4"}
+{"id": "h0264", "instruction": "Repeat:", "input": "she said \"single learns\"", "output": "she said \"single learns\""}
+{"id": "h0265", "instruction": "Sort letters:", "input": "yjh", "output": "hjy"}
+{"id": "h0266", "instruction": "Reverse:", "input": "fduoq", "output": "qoudf"}
+{"id": "h0267", "instruction": "Uppercase:", "input": "jzn", "output": "JZN"}
+{"id": "h0268", "instruction": "Repeat:", "input": "she said \"quick\"", "output": "she said \"quick\""}
+{"id": "h0269", "instruction": "Count vowels:", "input": "vwuy", "output": "1"}
+{"id": "h0270", "instruction": "Sort letters:", "input": "deu", "output": "deu"}
+{"id": "h0271", "instruction": "Repeat:", "input": "a text learns", "output": "a text learns"}
+{"id": "h0272", "instruction": "Sort letters:", "input": "truhe", "output": "ehrtu"}
+{"id": "h0273", "instruction": "Sort letters:", "input": "ujhyn", "output": "hjnuy"}
+{"id": "h0274", "instruction": "Uppercase:", "input": "jmazrk", "output": "JMAZRK"}
+{"id": "h0275", "instruction": "Uppercase:", "input": "jzyj", "output": "JZYJ"}
+{"id": "h0276", "instruction": "Repeat:", "input": "text über to copy text line line single quick", "output": "text über to copy text line line single quick"}
+{"id": "h0277", "instruction": "Count vowels:", "input": "jcjlqyt", "output": "0"}
+{"id": "h0278", "instruction": "Length:", "input": "hjyzncta", "output": "8"}
+{"id": "h0279", "instruction": "Sort letters:", "input": "whnffn", "output": "ffhnnw"}
+{"id": "h0280", "instruction": "Uppercase:", "input": "gqhzrj", "output": "GQHZRJ"}
+{"id": "h0281", "instruction": "Reverse:", "input": "flpfwjai", "output": "iajwfplf"}
+{"id": "h0282", "instruction": "Repeat:", "input": "she said \"token quick\"", "output": "she said \"token quick\""}
+{"id": "h0283", "instruction": "Uppercase:", "input": "fjsagnvv", "output": "FJSAGNVV"}
+{"id": "h0284", "instruction": "Uppercase:", "input": "kbmcvwjqg", "output": "KBMCVWJQG"}
+{"id": "h0285", "instruction": "Reverse:", "input": "rzwrmz", "output": "zmrwzr"}
+{"id": "h0286", "instruction": "Length:", "input": "koyfon", "output": "6"}
+{"id": "h0287", "instruction": "Repeat:", "input": "model it to it parser token without", "output": "model it to it parser token without"}
+{"id": "h0288", "instruction": "Reverse:", "input": "vnqpdj", "output": "jdpqnv"}
+{"id": "h0289", "instruction": "Reverse:", "input": "brgkx", "output": "xkgrb"}
+{"id": "h0290", "instruction": "Uppercase:", "input": "ehtw", "output": "EHTW"}
+{"id": "h0291", "instruction": "Uppercase:", "input": "uyg", "output": "UYG"}
+{"id": "h0292", "instruction": "Repeat:", "input": "back the loss", "output": "back the loss"}
+{"id": "h0293", "instruction": "Uppercase:", "input": "gmqfi", "output": "GMQFI"}
+{"id": "h0294", "instruction": "Sort letters:", "input": "byabafh", "output": "aabbfhy"}
+{"id": "h0295", "instruction": "Sort letters:", "input": "erb", "output": "ber"}
+{"id": "h0296", "instruction": "Sort letters:", "input": "ccid", "output": "ccdi"}
+{"id": "h0297", "instruction": "Sort letters:", "input": "yppxh", "output": "hppxy"}
+{"id": "h0298", "instruction": "Sort letters:", "input": "piteffp", "output": "effippt"}
+{"id": "h0299", "instruction": "Sort letters:", "input": "zfo", "output": "foz"}
+{"id": "h0300", "instruction": "Length:", "input": "lnn", "output": "3"}
+{"id": "h0301", "instruction": "Uppercase:", "input": "ovisk", "output": "OVISK"}
+{"id": "h0302", "instruction": "Reverse:", "input": "iriguewr", "output": "rweugiri"}
+{"id": "h0303", "instruction": "Repeat:", "input": "copy naïve reads", "output": "copy naïve reads"}
+{"id": "h0304", "instruction": "Reverse:", "input": "ppka", "output": "akpp"}
+{"id": "h0305", "instruction": "Reverse:", "input": "btyaw", "output": "waytb"}
+{"id": "h0306", "instruction": "Length:", "input": "bocqrtehwimh", "output": "12"}
+{"id": "h0307", "instruction": "Sort letters:", "input": "hiaevzm", "output": "aehimvz"}
+{"id": "h0308", "instruction": "Repeat:", "input": "learns\nlearns to", "output": "learns\nlearns to"}
+{"id": "h0309", "instruction": "Reverse:", "input": "tbktcl", "output": "lctkbt"}
+{"id": "h0310", "instruction": "Count vowels:", "input": "qdfgse", "output": "1"}
+{"id": "h0311", "instruction": "Uppercase:", "input": "yqnunj", "output": "YQNUNJ"}
+{"id": "h0312", "instruction": "Repeat:", "input": "line and line character it a résumé batch", "output": "line and line character it a résumé batch"}
+{"id": "h0313", "instruction": "Uppercase:", "input": "dodf", "output": "DODF"}
+{"id": "h0314", "instruction": "Repeat:", "input": "of learns losing", "output": "of learns losing"}
+{"id": "h0315", "instruction": "Reverse:", "input": "bcvys", "output": "syvcb"}
+{"id": "h0316", "instruction": "Sort letters:", "input": "omwg", "output": "gmow"}
+{"id": "h0317", "instruction": "Uppercase:", "input": "uxnrv", "output": "UXNRV"}
+{"id": "h0318", "instruction": "Length:", "input": "klyn", "output": "4"}
+{"id": "h0319", "instruction": "Repeat:", "input": "café token reads exactly it jalapeño café a it parser", "output": "café token reads exactly it jalapeño café a it parser"}
+{"id": "h0320", "instruction": "Length:", "input": "ro", "output": "2"}
+{"id": "h0321", "instruction": "Uppercase:", "input": "chz", "output": "CHZ"}
+{"id": "h0322", "instruction": "Uppercase:", "input": "auealbiih", "output": "AUEALBIIH"}
+{"id": "h0323", "instruction": "Repeat:", "input": "back batch small loss and reads a character naïve", "output": "back batch small loss and reads a character naïve"}
+{"id": "h0324", "instruction": "Length:", "input": "zbcfwxigods", "output": "11"}
+{"id": "h0325", "instruction": "Reverse:", "input": "caktib", "output": "bitkac"}
+{"id": "h0326", "instruction": "Reverse:", "input": "ejpdxhl", "output": "lhxdpje"}
+{"id": "h0327", "instruction": "Repeat:", "input": "data loss café résumé it it quick of", "output": "data loss café résumé it it quick of"}
+{"id": "h0328", "instruction": "Uppercase:", "input": "kaihrsdpe", "output": "KAIHRSDPE"}
+{"id": "h0329", "instruction": "Repeat:", "input": "character character losing", "output": "character character losing"}
+{"id": "h0330", "instruction": "Uppercase:", "input": "htbat", "output": "HTBAT"}
+{"id": "h0331", "instruction": "Sort letters:", "input": "qvfd", "output": "dfqv"}
+{"id": "h0332", "instruction": "Sort letters:", "input": "nabnkh", "output": "abhknn"}
+{"id": "h0333", "instruction": "Reverse:", "input": "yrh", "output": "hry"}
+{"id": "h0334", "instruction": "Repeat:", "input": "résumé a a", "output": "résumé a a"}
+{"id": "h0335", "instruction": "Sort letters:", "input": "fogopnl", "output": "fglnoop"}
+{"id": "h0336", "instruction": "Uppercase:", "input": "ldajuz", "output": "LDAJUZ"}
+{"id": "h0337", "instruction": "Repeat:", "input": "résumé of", "output": "résumé of"}
+{"id": "h0338", "instruction": "Count vowels:", "input": "gjmvvquti", "output": "2"}
+{"id": "h0339", "instruction": "Sort letters:", "input": "clrgps", "output": "cglprs"}
+{"id": "h0340", "instruction": "Sort letters:", "input": "grwu", "output": "gruw"}
+{"id": "h0341", "instruction": "Reverse:", "input": "lszch", "output": "hczsl"}
+{"id": "h0342", "instruction": "Sort letters:", "input": "qkn", "output": "knq"}
+{"id": "h0343", "instruction": "Reverse:", "input": "blm", "output": "mlb"}
+{"id": "h0344", "instruction": "Count vowels:", "input": "fxrp", "output": "0"}
+{"id": "h0345", "instruction": "Repeat:", "input": "data without über a single to batch", "output": "data without über a single to batch"}
+{"id": "h0346", "instruction": "Reverse:", "input": "gqs", "output": "sqg"}
+{"id": "h0347", "instruction": "Count vowels:", "input": "czvgbdes", "output": "1"}
+{"id": "h0348", "instruction": "Sort letters:", "input": "uus", "output": "suu"}
+{"id": "h0349", "instruction": "Repeat:", "input": "the the", "output": "the the"}
+{"id": "h0350", "instruction": "Reverse:", "input": "zqeukwz", "output": "zwkueqz"}
+{"id": "h0351", "instruction": "Repeat:", "input": "jalapeño it", "output": "jalapeño it"}
+{"id": "h0352", "instruction": "Length:", "input": "tqwdgkkczfm", "output": "11"}
+{"id": "h0353", "instruction": "Repeat:", "input": "gradient\nloss déjà", "output": "gradient\nloss déjà"}
+{"id": "h0354", "instruction": "Reverse:", "input": "zbujfu", "output": "ufjubz"}
+{"id": "h0355", "instruction": "Length:", "input": "xtwqbosdt", "output": "9"}
+{"id": "h0356", "instruction": "Uppercase:", "input": "bqze", "output": "BQZE"}
+{"id": "h0357", "instruction": "Repeat:", "input": "jalapeño parser losing", "output": "jalapeño parser losing"}
+{"id": "h0358", "instruction": "Reverse:", "input": "zme", "output": "emz"}
+{"id": "h0359", "instruction": "Uppercase:", "input": "rzfchzczj", "output": "RZFCHZCZJ"}
+{"id": "h0360", "instruction": "Count vowels:", "input": "ugrlu", "output": "2"}
+{"id": "h0361", "instruction": "Sort letters:", "input": "znuqbd", "output": "bdnquz"}
+{"id": "h0362", "instruction": "Repeat:", "input": "señor character café", "output": "señor character café"}
+{"id": "h0363", "instruction": "Length:", "input": "atnfys", "output": "6"}
+{"id": "h0364", "instruction": "Repeat:", "input": "reads\tback", "output": "reads\tback"}
+{"id": "h0365", "instruction": "Length:", "input": "cebbvh", "output": "6"}
+{"id": "h0366", "instruction": "Sort letters:", "input": "sygltk", "output": "gklsty"}
+{"id": "h0367", "instruction": "Repeat:", "input": "naïve losing", "output": "naïve losing"}
+{"id": "h0368", "instruction": "Sort letters:", "input": "azfg", "output": "afgz"}
+{"id": "h0369", "instruction": "Repeat:", "input": "copy quick it", "output": "copy quick it"}
+{"id": "h0370", "instruction": "Sort letters:", "input": "lcxrjf", "output": "cfjlrx"}
+{"id": "h0371", "instruction": "Sort letters:", "input": "sazekoiz", "output": "aeikoszz"}
+{"id": "h0372", "instruction": "Sort letters:", "input": "wki", "output": "ikw"}
+{"id": "h0373", "instruction": "Reverse:", "input": "ddxmdyk", "output": "kydmxdd"}
+{"id": "h0374", "instruction": "Sort letters:", "input": "hxqzjtzw", "output": "hjqtwxzz"}
+{"id": "h0375", "instruction": "Repeat:", "input": "character jalapeño small exactly learns small back back quick small", "output": "character jalapeño small exactly learns small back back quick small"}
+{"id": "h0376", "instruction": "Reverse:", "input": "gdmr", "output": "rmdg"}
+{"id": "h0377", "instruction": "Count vowels:", "input": "dkzhk", "output": "0"}
+{"id": "h0378", "instruction": "Sort letters:", "input": "ylxb", "output": "blxy"}
+{"id": "h0379", "instruction": "Sort letters:", "input": "dng", "output": "dgn"}
+{"id": "h0380", "instruction": "Length:", "input": "pdxywgujmgqo", "output": "12"}
+{"id": "h0381", "instruction": "Sort letters:", "input": "ztwejks", "output": "ejkstwz"}
+{"id": "h0382", "instruction": "Uppercase:", "input": "fmlftlv", "output": "FMLFTLV"}
+{"id": "h0383", "instruction": "Reverse:", "input": "pwigeh", "output": "hegiwp"}
+{"id": "h0384", "instruction": "Sort letters:", "input": "uepltx", "output": "elptux"}
+{"id": "h0385", "instruction": "Sort letters:", "input": "blda", "output": "abdl"}
+{"id": "h0386", "instruction": "Reverse:", "input": "lxclo", "output": "olcxl"}
+{"id": "h0387", "instruction": "Repeat:", "input": "naïve quick", "output": "naïve quick"}
+{"id": "h0388", "instruction": "Uppercase:", "input": "wsr", "output": "WSR"}
+{"id": "h0389", "instruction": "Count vowels:", "input": "mdngqoguk", "output": "2"}
+{"id": "h0390", "instruction": "Count vowels:", "input": "yzoypdy", "output": "1"}
+{"id": "h0391", "instruction": "Length:", "input": "ttn", "output": "3"}
+{"id": "h0392", "instruction": "Sort letters:", "input": "wmxf", "output": "fmwx"}
+{"id": "h0393", "instruction": "Sort letters:", "input": "ujicjcql", "output": "ccijjlqu"}
+{"id": "h0394", "instruction": "Count vowels:", "input": "jgyj", "output": "0"}
+{"id": "h0395", "instruction": "Length:", "input": "wjv", "output": "3"}
+{"id": "h0396", "instruction": "Sort letters:", "input": "frdjca", "output": "acdfjr"}
+{"id": "h0397", "instruction": "Sort letters:", "input": "jdzzxw", "output": "djwxzz"}
+{"id": "h0398", "instruction": "Reverse:", "input": "zpxm", "output": "mxpz"}
+{"id": "h0399", "instruction": "Reverse:", "input": "mucxoyf", "output": "fyoxcum"}

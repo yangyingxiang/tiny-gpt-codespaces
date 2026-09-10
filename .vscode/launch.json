@@ -2,55 +2,50 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Train: quick debug run (50 iters, tiny model)",
+      "name": "Train: quick debug run (300 iters)",
       "type": "debugpy",
       "request": "launch",
-      "module": "src.train",
+      "module": "sft.train",
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}",
       "justMyCode": false,
       "args": [
-        "--max_iters", "50",
-        "--batch_size", "8",
-        "--block_size", "64",
-        "--n_layer", "2",
-        "--n_head", "2",
-        "--n_embd", "64",
-        "--eval_interval", "25",
-        "--eval_iters", "5",
-        "--log_interval", "5"
+        "--max_iters", "300",
+        "--eval_interval", "100",
+        "--eval_examples", "50",
+        "--final_eval_examples", "100",
+        "--log_interval", "20"
       ]
     },
     {
-      "name": "Train: full run (500 iters)",
+      "name": "Train: full run (3000 iters, ~2-3 min)",
       "type": "debugpy",
       "request": "launch",
-      "module": "src.train",
+      "module": "sft.train",
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}",
       "justMyCode": false,
-      "args": ["--max_iters", "500"]
+      "args": []
     },
     {
-      "name": "Train: stop on first exception",
+      "name": "Evaluate checkpoint (val + holdout exact match)",
       "type": "debugpy",
       "request": "launch",
-      "module": "src.train",
+      "module": "sft.evaluate",
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}",
       "justMyCode": false,
-      "stopOnEntry": true,
-      "args": ["--max_iters", "20", "--log_interval", "1"]
+      "args": ["--ckpt", "checkpoints/model.pt"]
     },
     {
-      "name": "Sample from checkpoint",
+      "name": "Generate: ask the checkpoint",
       "type": "debugpy",
       "request": "launch",
-      "module": "src.sample",
+      "module": "sft.generate",
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}",
       "justMyCode": false,
-      "args": ["--prompt", "ROMEO:", "--max_new_tokens", "300"]
+      "args": ["--instruction", "Reverse:", "--input", "banana"]
     },
     {
       "name": "Pytest: all tests",
@@ -61,6 +56,16 @@
       "cwd": "${workspaceFolder}",
       "justMyCode": false,
       "args": ["-vv", "tests"]
+    },
+    {
+      "name": "Pytest: parser spec only (Part 1)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "justMyCode": false,
+      "args": ["-vv", "tests/test_parser.py"]
     },
     {
       "name": "Python: current file",

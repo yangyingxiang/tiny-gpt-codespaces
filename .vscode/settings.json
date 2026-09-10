@@ -1,12 +1,18 @@
 {
   "python.testing.pytestEnabled": true,
-  "python.testing.pytestArgs": ["tests"],
-  "python.analysis.extraPaths": ["${workspaceFolder}"],
+  "python.testing.pytestArgs": [
+    "tests"
+  ],
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}"
+  ],
   "python.terminal.activateEnvInCurrentTerminal": true,
   "debug.internalConsoleOptions": "openOnSessionStart",
   "debug.showBreakpointsInOverviewRuler": true,
   "debug.inlineValues": "on",
-  "editor.rulers": [100],
+  "editor.rulers": [
+    100
+  ],
   "files.trimTrailingWhitespace": true,
   "liveshare.featureSet": "stable",
   "liveshare.anonymousGuestApproval": "prompt",
@@ -14,5 +20,13 @@
   "liveshare.shareExternalFiles": false,
   "liveshare.allowGuestDebugControl": true,
   "liveshare.allowGuestTaskControl": true,
-  "liveshare.launcherClient": "visualStudioCode"
+  "liveshare.launcherClient": "visualStudioCode",
+  "[plaintext]": {
+    "files.trimTrailingWhitespace": false,
+    "files.insertFinalNewline": false
+  },
+  "files.associations": {
+    "*.tsv": "plaintext"
+  },
+  "files.autoGuessEncoding": false
 }

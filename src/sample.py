@@ -5,6 +5,17 @@
 
 from __future__ import annotations
 
+# Allow this file to be run directly as a script (VS Code's "Debug Python File"
+# / `python src/sample.py`) as well as with `python -m src.sample`. Without this,
+# the relative imports below raise "attempted relative import with no known
+# parent package", because a script has no parent package.
+if __package__ in (None, ""):
+    import sys
+    from pathlib import Path as _Path
+
+    sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+    __package__ = "src"
+
 import argparse
 from pathlib import Path
 

@@ -14,6 +14,9 @@ Everything runs on CPU. A full training run takes about 2–3 minutes on a free 
 
 **Start here → [EXERCISE.md](EXERCISE.md)**
 
+> You are on the **`solutions`** branch: the code here is fixed. See [SOLUTIONS.md](SOLUTIONS.md).
+> To practise, switch to `main`.
+
 | Branch | What's on it |
 |---|---|
 | `main` | The exercise: a draft parser (Part 1) and an SFT pipeline with **6 planted bugs** (Part 2). |

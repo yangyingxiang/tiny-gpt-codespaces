@@ -4,7 +4,7 @@
     {
       "label": "install deps",
       "type": "shell",
-      "command": "python -m pip install --index-url https://download.pytorch.org/whl/cpu torch && python -m pip install numpy pytest",
+      "command": "python -m pip install --index-url https://download.pytorch.org/whl/cpu torch && python -m pip install numpy pytest transformers datasets peft accelerate",
       "problemMatcher": []
     },
     {
@@ -37,6 +37,30 @@
       "label": "test parser spec (Part 1)",
       "type": "shell",
       "command": "python -m pytest -q tests/test_parser.py",
+      "problemMatcher": []
+    },
+    {
+      "label": "variant v1: torch + LoRA",
+      "type": "shell",
+      "command": "python -m sft.v1_torch_lora.main",
+      "problemMatcher": []
+    },
+    {
+      "label": "variant v2: torch + packing + grad checkpointing",
+      "type": "shell",
+      "command": "python -m sft.v2_torch_packing_ckpt.main",
+      "problemMatcher": []
+    },
+    {
+      "label": "variant v3: HF Trainer + peft LoRA",
+      "type": "shell",
+      "command": "python -m sft.v3_hf_trainer_lora.main",
+      "problemMatcher": []
+    },
+    {
+      "label": "variant v4: HF accelerate loop",
+      "type": "shell",
+      "command": "python -m sft.v4_hf_accelerate.main",
       "problemMatcher": []
     },
     {

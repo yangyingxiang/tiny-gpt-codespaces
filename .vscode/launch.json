@@ -68,6 +68,46 @@
       "args": ["-vv", "tests/test_parser.py"]
     },
     {
+      "name": "Variant v1: torch + LoRA (main.py)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "sft.v1_torch_lora.main",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "justMyCode": false,
+      "args": []
+    },
+    {
+      "name": "Variant v2: torch + packing + grad ckpt (main.py)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "sft.v2_torch_packing_ckpt.main",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "justMyCode": false,
+      "args": []
+    },
+    {
+      "name": "Variant v3: HF Trainer + peft LoRA (main.py)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "sft.v3_hf_trainer_lora.main",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "justMyCode": false,
+      "args": []
+    },
+    {
+      "name": "Variant v4: HF accelerate loop (main.py)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "sft.v4_hf_accelerate.main",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "justMyCode": false,
+      "args": []
+    },
+    {
       "name": "Python: current file",
       "type": "debugpy",
       "request": "launch",

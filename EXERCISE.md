@@ -136,3 +136,12 @@ Be ready to explain, and ideally show, how you know each fix is right in about 1
 
 Be ready for this one: *"After your leakage fix, val exact match went **down**. Did you break
 something?"*
+
+---
+
+## More rounds
+
+Done with this pipeline? README §7 lists four more implementations of the same task under
+`sft/v1_*` … `sft/v4_*` (pure PyTorch with LoRA, packing + gradient checkpointing, Hugging Face
+`Trainer` + peft, `accelerate`), each standalone, each with five different planted bugs and its
+own `README.md` / `SOLUTIONS.md`.

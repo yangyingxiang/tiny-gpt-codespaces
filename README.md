@@ -131,8 +131,49 @@ python -m pytest -q tests/test_regressions.py      # 9 tests, one or two per pla
 git clone https://github.com/yangyingxiang/tiny-gpt-codespaces.git
 cd tiny-gpt-codespaces
 python -m pip install --index-url https://download.pytorch.org/whl/cpu torch
-python -m pip install numpy pytest
+python -m pip install -r requirements.txt      # transformers/peft/accelerate are only needed for sft/v3_*, sft/v4_*
 python -m sft.train
+```
+
+---
+
+## 7. More pipelines to debug: `sft/v1_*` … `sft/v4_*`
+
+The same task, the same clean data (`data/sft_train.jsonl` + `data/holdout.jsonl`, no parser
+needed), written four more ways. Each folder is **standalone**: its `main.py` runs with
+"Run Python File" in VS Code (or `python -m sft.<folder>.main`, or the matching F5 configuration
+and task), it does not import anything from the top-level `sft/` package, and it carries its own
+`README.md` (the brief, healthy numbers, hints) and `SOLUTIONS.md` (the answers, so don't open it
+first). Every folder has **five planted bugs**, and no bug class repeats across folders or
+with the six in `sft/` itself.
+
+| Folder | Style | Mechanisms | Bugs |
+|---|---|---|---|
+| `sft/v1_torch_lora/` | pure PyTorch, step loop, two phases (base → adapter) | hand-rolled **LoRA**, **SDPA** ("flash") attention, gradient accumulation | 1 crash, 4 silent |
+| `sft/v2_torch_packing_ckpt/` | pure PyTorch, epoch loop | **sequence packing** with a block-diagonal mask, **gradient checkpointing**, SDPA, dropout | 1 crash, 4 silent |
+| `sft/v3_hf_trainer_lora/` | Hugging Face **`Trainer`** + `datasets`, two phases | **peft LoRA**, `gradient_checkpointing=True`, `attn_implementation="sdpa"`, tiny random-init GPT-2 + real `gpt2` tokenizer | 2 crash, 3 silent |
+| `sft/v4_hf_accelerate/` | hand-written loop driven by **`accelerate`** | `accumulate`, `prepare`, HF gradient checkpointing, SDPA, `get_scheduler`, tiny GPT-2 | 2 crash, 3 silent |
+
+The two Hugging Face variants use the real `gpt2` tokenizer on a tiny random-init GPT-2. Two
+adjustments keep that practical on a CPU: inputs and answers are *spelled out* one character per
+token (byte-level BPE otherwise hides the letters a character task needs), and the model's
+embedding table is restricted to the ~150 gpt2 ids the corpus actually uses, so the 50257-way
+output layer does not eat 95% of the run. Both are explained in the folder READMEs and are not
+bugs.
+
+FlashAttention proper needs CUDA, so all four use PyTorch's `scaled_dot_product_attention`
+(the HF ones via `attn_implementation="sdpa"`): the same call dispatches to the flash kernel on a
+GPU and to the math kernel on the CPU Codespace. `sft/v1_*` and `sft/v2_*` run on plain PyTorch;
+`sft/v3_*` and `sft/v4_*` need `transformers`, `datasets`, `peft` and `accelerate`, which
+`.devcontainer/post-create.sh` installs (the `gpt2` tokenizer is downloaded once).
+
+```bash
+python -m sft.v1_torch_lora.main --quick        # every variant has --quick for a fast look
+python -m sft.v2_torch_packing_ckpt.main
+python -m sft.v3_hf_trainer_lora.main
+python -m sft.v4_hf_accelerate.main             # or: accelerate launch sft/v4_hf_accelerate/main.py
+git checkout -- sft/v1_torch_lora               # put the bugs back
+python scripts/make_sft_jsonl.py                # regenerate data/sft_train.jsonl (deterministic)
 ```
 
 MIT licensed.
